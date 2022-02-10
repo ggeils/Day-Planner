@@ -31,6 +31,14 @@ function timeBockColor() {
     }
   });
 }
+function saveHandler(event) {
+  let hourID = $(this).parent().attr("id");
+
+  localStorage.setItem(
+    moment().format("DDDYYYY") + hourID,
+    $("#" + hourID + " textarea").val()
+  );
+}
 
 // Code time display on top of webpage
 
