@@ -4,6 +4,8 @@ $(generate);
 function generate() {
   $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
+  timeBlockColor();
+
   $(".time-block").each(function () {
     let blockID = $(this).attr("id");
 
@@ -15,7 +17,7 @@ function generate() {
   $(".saveBtn").on("click", saveHandler);
 }
 
-function timeBockColor() {
+function timeBlockColor() {
   $(".time-block").each(function () {
     let blockHour = parseInt($(this).attr("id").replace("hour-", ""));
     var currentHour = parseInt(moment().format("H"));
