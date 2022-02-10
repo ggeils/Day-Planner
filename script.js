@@ -1,10 +1,19 @@
-// Initialize jquery
-$(init);
+$(generate);
 
 // Initialize function
-function init() {
+function generate() {
     $('#currentDay').text(moment().format("dddd, MMMM Do"));
+
+    $(".time-block").each(function () {
+        let blockID = $(this).attr("id");
+
+    $("#" + blockID + " textarea").text(localStorage.getItem(moment().format("DDDYYYY") + blockID));
+    });
+
+    $(".saveBtn").on("click", saveHandler);
 }
+
+
 // Code time display on top of webpage
 
 // First function to initialize the blocks
