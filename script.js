@@ -1,5 +1,10 @@
 // Initialize jquery
+$(init);
 
+// Initialize function
+function init() {
+    $('#currentDay').text(moment().format("dddd, MMMM Do"));
+}
 // Code time display on top of webpage
 
 // First function to initialize the blocks
