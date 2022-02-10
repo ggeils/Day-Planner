@@ -11,7 +11,7 @@ This is a simple day planner that allows the user to write and save events for e
 As a user I want to be able to load up the webpage and fill in and save my schedule for the day.
 ```
 ## Deployed URL
-https://ggeils.github.io/Day-Planner/
+https://ggeils.github.io/Day-Planner/index.html
 
 ## Contact Me
 [Email me](mailto:gfgeils3@gmail.com)
