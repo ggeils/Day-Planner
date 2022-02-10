@@ -2,16 +2,36 @@ $(generate);
 
 // Initialize function
 function generate() {
-    $('#currentDay').text(moment().format("dddd, MMMM Do"));
+  $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
-    $(".time-block").each(function () {
-        let blockID = $(this).attr("id");
+  $(".time-block").each(function () {
+    let blockID = $(this).attr("id");
 
-    $("#" + blockID + " textarea").text(localStorage.getItem(moment().format("DDDYYYY") + blockID));
-    });
+    $("#" + blockID + " textarea").text(
+      localStorage.getItem(moment().format("DDDYYYY") + blockID)
+    );
+  });
 
-    $(".saveBtn").on("click", saveHandler);
+  $(".saveBtn").on("click", saveHandler);
 }
+
+function timeBockColor() {
+  $(".time-block").each(function () {
+    let blockHour = parseInt($(this).attr("id").replace("hour-", ""));
+    var currentHour = parseInt(moment().format("H"));
+
+    $(this).removeClass("past present future");
+
+    if (blockHour < currentHour) {
+      $(this).addClass("past");
+    } else if (blockHour > currentHour) {
+      $(this).addClass("future");
+    } else {
+      $(this).addClass("present");
+    }
+  });
+}
+
 // Code time display on top of webpage
 
 // First function to initialize the blocks
