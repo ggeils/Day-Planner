@@ -14,16 +14,20 @@ function generate() {
     );
   });
 
+  // Utilizes the save button to send data to localstorage
   $(".saveBtn").on("click", saveHandler);
 }
 
+// Function to color the time blocks
 function timeBlockColor() {
   $(".time-block").each(function () {
     let blockHour = parseInt($(this).attr("id").replace("hour-", ""));
     var currentHour = parseInt(moment().format("H"));
 
+    // Removes previously applied classes dependent on time
     $(this).removeClass("past present future");
 
+    // Adds classes to the time block based on the current time to color them
     if (blockHour < currentHour) {
       $(this).addClass("past");
     } else if (blockHour > currentHour) {
@@ -33,6 +37,8 @@ function timeBlockColor() {
     }
   });
 }
+
+// Function to handle saving the data to localstorage
 function saveHandler(event) {
   let hourID = $(this).parent().attr("id");
 
@@ -41,15 +47,3 @@ function saveHandler(event) {
     $("#" + hourID + " textarea").val()
   );
 }
-
-// Code time display on top of webpage
-
-// First function to initialize the blocks
-
-// Timer for time block color
-
-// Keep timeblocks updated in local storage
-
-// Write a second function that colors the time blocks
-
-// Save function for local storage
