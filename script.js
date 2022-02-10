@@ -12,8 +12,6 @@ function generate() {
 
     $(".saveBtn").on("click", saveHandler);
 }
-
-
 // Code time display on top of webpage
 
 // First function to initialize the blocks
