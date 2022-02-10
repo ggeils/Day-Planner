@@ -1,3 +1,5 @@
+// Initialize jquery
+
 // Code time display on top of webpage
 
 // First function to initialize the blocks
